@@ -1,4 +1,4 @@
-import Axios from 'Axios';
+import Axios from 'axios';
 import { ResponseData } from '../types';
 
 export async function get(id: string): Promise<ResponseData | undefined> {
@@ -10,6 +10,7 @@ export async function get(id: string): Promise<ResponseData | undefined> {
     const { data } = response;
 
     for (const prop of ['collaborators', 'votes', 'addedat']) {
+      if (!Object.prototype.hasOwnProperty.call(data, prop)) continue;
       // @ts-ignore
       data[prop] = JSON.parse(data[prop]);
     }

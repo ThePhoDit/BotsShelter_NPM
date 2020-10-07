@@ -1,0 +1,44 @@
+{
+  "name": "botsshelter",
+  "version": "1.0.0",
+  "description": "NPM module to easily interact with the BotsShelter API.",
+  "main": "compiled/index.js",
+  "types": "compiled/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThePhoDit/BotsShelter_NPM.git"
+  },
+  "keywords": [
+    "api",
+    "bots",
+    "discord"
+  ],
+  "author": "ThePhoDit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThePhoDit/BotsShelter_NPM/issues"
+  },
+  "homepage": "https://github.com/ThePhoDit/BotsShelter_NPM#readme",
+  "devDependencies": {
+    "prettier": "^2.1.2",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "axios": "^0.20.0"
+  },
+  "files": [
+    "compiled/**/*"
+  ]
+}

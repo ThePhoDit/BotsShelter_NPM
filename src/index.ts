@@ -2,7 +2,7 @@ import Axios from 'axios';
 import { ResponseData } from '../types';
 
 export async function get(id: string): Promise<ResponseData | undefined> {
-  const response = await Axios.get<object>(`https://bots.tutoshelter.me/v1/bots/${id}`, { responseType: 'json' }).catch(
+  const response = await Axios.get<object>(`https://bots.tutoshelter.me/bot/${id}`, { responseType: 'json' }).catch(
     (error) => error.response,
   );
 
@@ -16,6 +16,6 @@ export async function get(id: string): Promise<ResponseData | undefined> {
     }
 
     return data as ResponseData;
-  } else if (response.status === 404) return undefined;
+  } else if (response.status === 404 || (response.response && response.response.status === 404)) return undefined;
   else throw new Error(response.message);
 }

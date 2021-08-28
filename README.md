@@ -4,9 +4,9 @@ This package will get bots info from the BotsShelter API and parse it for you.
 To initialize it, do the following:
 
 ```javascript
-const BS = require('botsshelter');
+const Client = require('botsshelter').default;
 
-const client = new BS.Client('YOUR BOTSSHELTER TOKEN');
+const client = new Client('YOUR BOTSSHELTER TOKEN');
 ```
 
 ## Methods

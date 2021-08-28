@@ -5,8 +5,7 @@ export default class Client {
   private token: string;
 
   constructor(token: string) {
-    if (!token)
-      throw new Error('Invalid Token');
+    if (!token) throw new Error('Invalid Token');
     this.token = token;
   }
 

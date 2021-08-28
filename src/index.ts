@@ -41,6 +41,7 @@ export default class Client {
     if (response.status === 200) return true;
     else if (response.status === 429) return false;
     else if (response.status === 404) return false;
+    else if (response.status === 401) return false;
     else throw new Error(response.message);
   }
 }

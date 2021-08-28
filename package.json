@@ -1,6 +1,6 @@
 {
   "name": "botsshelter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "NPM module to easily interact with the BotsShelter API.",
   "main": "compiled/index.js",
   "types": "compiled/index.d.ts",

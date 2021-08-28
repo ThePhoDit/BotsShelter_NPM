@@ -1,19 +1,27 @@
 # BotsShelter
 
 This package will get bots info from the BotsShelter API and parse it for you.
-It has a single function, that is:
+To initialize it, do the following:
 
 ```javascript
-const { get } = require('botsshelter');
+const Client = require('botsshelter');
 
-get('SOME DISCORD BOT ID')
+const client = new Client('YOUR BOTSSHELTER TOKEN');
+```
+
+## Methods
+
+### Get
+```javascript
+client.get('SOME DISCORD BOT ID')
     .then((data) => console.log(data))
     .catch((error) => console.error(error));
 ```
+
 You can obviously use the async/await syntax.
 The function will return the bot data or undefined if no bot was found with the provided ID. 
 
-### Returned Data
+#### Returned Data
 ```json5
 {
   id: 'Discord ID',
@@ -28,3 +36,15 @@ The function will return the bot data or undefined if no bot was found with the 
   addedat: 1234 // date in ms
 }
 ```
+
+### Vote
+```javascript
+client.vote('SOME DISCORD BOT ID')
+    .then((data) => console.log(data))
+    .catch((error) => console.error(error));
+```
+
+#### Returned Data
+
+`true` if successfully voted.
+`false` if the bot was not found, or you were rate limited. You can only vote every 12 hours.

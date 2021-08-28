@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import { ResponseData } from '../types';
 
-export default class Client {
+export class Client {
   private token: string;
 
   constructor(token: string) {

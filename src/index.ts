@@ -17,7 +17,7 @@ export default class Client {
     if (response.status === 200) {
       const { data } = response;
 
-      for (const prop of ['collaborators', 'votes', 'addedat']) {
+      for (const prop of ['collaborators', 'votes', 'addedAt']) {
         if (!Object.prototype.hasOwnProperty.call(data, prop)) continue;
         // @ts-ignore
         data[prop] = JSON.parse(data[prop]);
